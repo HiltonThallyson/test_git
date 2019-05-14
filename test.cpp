@@ -13,9 +13,9 @@ class teste{
 };
 
 
-ostream & operator << (ostream &out, const teste t){
-	out << t.a << endl;
-	out << t.b << endl;
+ostream & operator << (ostream &out, const teste *t){
+	out << t->a << endl;
+	out << t->b << endl;
 	return out;
 }
 
@@ -42,9 +42,10 @@ int main(){
 	it1 = mp.find(1);
 	it2 = mp.find(2);
 
+	cout << mp[2] << endl;
 	//cout << mp.size() << endl;
 
-	cout << (*it1).second;
+	//certo!!cout << (*it1).second;
 
 	//cout << "mp[1:j] = " << *it1 << endl;
 	// cout << "a: " << t->a << endl;
