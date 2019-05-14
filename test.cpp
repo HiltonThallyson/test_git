@@ -9,7 +9,7 @@ class teste{
 		double b;
 		teste(int,double);
 		teste();
-		friend ostream & operator << (ostream &out, const teste &t);
+		friend ostream & operator << (ostream &out, const teste t);
 };
 
 
@@ -36,13 +36,17 @@ int main(){
 	map <int, teste *>::iterator it2;
 	teste *j = new teste(115,7.59);
 	teste *t = new teste(a,b);
-	// mp.insert(pair <int, teste *>(1,j));
-	// mp.insert(pair <int, teste *> (2,t));
+	mp.insert(pair <int, teste *>(1,j));
+	mp.insert(pair <int, teste *> (2,t));
 
 	it1 = mp.find(1);
 	it2 = mp.find(2);
 
-	cout << "mp[1:j] = " << *it1 << endl;
+	//cout << mp.size() << endl;
+
+	cout << (*it1).second;
+
+	//cout << "mp[1:j] = " << *it1 << endl;
 	// cout << "a: " << t->a << endl;
 	// cout << "b: " << t->b << endl;
 	return 0;
